@@ -4,6 +4,8 @@
 
 [Здесь](https://nstonic.github.io/books/pages/index1.html) можно посмотреть опубликованную версию.
 
+![site_preview.png](site_preview.png)
+
 ## Как установить
 
 - Для запуска сайта вам понадобится Python3.
