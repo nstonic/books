@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 import os
 
@@ -23,9 +24,9 @@ def render_page(json_path: str):
             books_cards = json.load(file)
     except FileNotFoundError:
         print(
-            'Необходимо указать путь к json-файлу с данными либо в файле settings.py, '
-            'либо в аргументе --json_path при запуске скрипта из командной строки.'
-            'Подробнее читайте в README.'
+            'РќРµРѕР±С…РѕРґРёРјРѕ СѓРєР°Р·Р°С‚СЊ РїСѓС‚СЊ Рє json-С„Р°Р№Р»Сѓ СЃ РґР°РЅРЅС‹РјРё Р»РёР±Рѕ РІ С„Р°Р№Р»Рµ settings.py,'
+            'Р»РёР±Рѕ РІ Р°СЂРіСѓРјРµРЅС‚Рµ --json_path РїСЂРё Р·Р°РїСѓСЃРєРµ СЃРєСЂРёРїС‚Р° РёР· РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё.\n'
+            'РџРѕРґСЂРѕР±РЅРµРµ С‡РёС‚Р°Р№С‚Рµ РІ README.'
         )
         exit()
     book_cards_on_page = 10
@@ -48,7 +49,7 @@ def main():
     parser.add_argument(
         '--json_path',
         type=validate_filepath_arg,
-        help='Указать путь к json-файлу с данными'
+        help='РЈРєР°Р·Р°С‚СЊ РїСѓС‚СЊ Рє json-С„Р°Р№Р»Сѓ СЃ РґР°РЅРЅС‹РјРё'
     )
     args = parser.parse_args()
     json_path = args.json_path or JSON_PATH
