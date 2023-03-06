@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import os
+import sys
 
 from argparse import ArgumentParser
 from livereload import Server
@@ -26,7 +27,8 @@ def render_page(json_path: str):
         print(
             'Необходимо указать путь к json-файлу с данными либо в файле settings.py,'
             'либо в аргументе --json_path при запуске скрипта из командной строки.\n'
-            'Подробнее читайте в README.'
+            'Подробнее читайте в README.',
+            file=sys.stderr
         )
         exit()
     book_cards_on_page = 10
