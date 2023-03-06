@@ -11,7 +11,7 @@ ROOT_DIR = 'site'
 
 def render_page():
     env = Environment(
-        loader=FileSystemLoader(ROOT_DIR),
+        loader=FileSystemLoader(''),
         autoescape=select_autoescape(['html', 'xml'])
     )
 
@@ -39,5 +39,5 @@ def render_page():
 if __name__ == '__main__':
     render_page()
     server = Server()
-    server.watch(os.path.join(ROOT_DIR, 'template.html'), render_page)
-    server.serve(root=ROOT_DIR)
+    server.watch(os.path.join('template.html'), render_page)
+    server.serve()
