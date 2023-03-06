@@ -42,4 +42,4 @@ docs/_build/
 # idea
 .idea/
 # result files
-site/pages/
+pages/
