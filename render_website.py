@@ -6,8 +6,6 @@ from livereload import Server
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from more_itertools import chunked
 
-ROOT_DIR = 'site'
-
 
 def render_page():
     env = Environment(
@@ -29,9 +27,8 @@ def render_page():
             total_pages=len(books_by_pages),
             current_page=page_number
         )
-        pages_dir = os.path.join(ROOT_DIR, 'pages')
-        os.makedirs(pages_dir, exist_ok=True)
-        page_path = os.path.join(pages_dir, f'index{page_number}.html')
+        os.makedirs('pages', exist_ok=True)
+        page_path = os.path.join('pages', f'index{page_number}.html')
         with open(page_path, 'w', encoding="utf8") as file:
             file.write(rendered_page)
 
