@@ -17,9 +17,9 @@
         <li class="page-item {% if current_page==1 %}disabled{% endif %}">
           <a class="page-link" href="index{{ current_page-1 }}.html">Предыдущая</a>
         </li>
-          {% for page in range(total_pages) %}
-            <li class="page-item {% if current_page==page+1 %}active{% endif %}">
-              <a class="page-link" href="index{{ page+1 }}.html">{{ page+1 }}</a>
+          {% for page in range(1, total_pages+1) %}
+            <li class="page-item {% if current_page==page %}active{% endif %}">
+              <a class="page-link" href="index{{ page }}.html">{{ page }}</a>
             </li>
           {% endfor %}
         <li class="page-item {% if current_page==total_pages %}disabled{% endif %}">
