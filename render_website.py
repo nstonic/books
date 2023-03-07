@@ -22,7 +22,7 @@ def render_page(json_path: str):
 
     try:
         with open(json_path) as file:
-            books_cards = json.load(file)
+            book_cards = json.load(file)
     except FileNotFoundError:
         print(
             'Необходимо указать путь к json-файлу с данными либо в файле settings.py,'
@@ -32,11 +32,11 @@ def render_page(json_path: str):
         )
         exit()
     book_cards_on_page = 10
-    book_cards_separated_by_pages = list(chunked(books_cards, book_cards_on_page))
-    for page_number, books_cards in enumerate(book_cards_separated_by_pages, start=1):
+    book_cards_separated_by_pages = list(chunked(book_cards, book_cards_on_page))
+    for page_number, book_cards in enumerate(book_cards_separated_by_pages, start=1):
         number_of_columns = 2
         rendered_page = template.render(
-            books=chunked(books_cards, number_of_columns),
+            book_cards=chunked(book_cards, number_of_columns),
             total_pages=len(book_cards_separated_by_pages),
             current_page=page_number
         )
